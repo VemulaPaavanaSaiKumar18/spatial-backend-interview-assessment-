@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from pydantic import ConfigDict
 from typing import Dict, Any
 
 class PointBase(BaseModel):
@@ -10,8 +11,7 @@ class PointCreate(PointBase):
 
 class PointResponse(PointBase):
     id: int
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 class PolygonBase(BaseModel):
     name: str
@@ -22,5 +22,4 @@ class PolygonCreate(PolygonBase):
 
 class PolygonResponse(PolygonBase):
     id: int
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)

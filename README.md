@@ -45,3 +45,18 @@ Now includes a **spatial query endpoint** to find points inside polygons! ðŸ—ºï¸
 
 #### GET /polygons/{polygon_id}/points
 Finds all points located **inside** the given polygon.
+
+## Tests
+
+Run the test suite (uses a virtualenv created by `make setup` if missing):
+
+```bash
+make test
+```
+
+Or run directly with pytest after installing dependencies into your active Python environment:
+
+```bash
+python -m pip install -r requirements.txt pytest
+pytest -q
+```
